@@ -71,35 +71,36 @@ export class CreateUserComponent implements OnInit {
   //   }
   // }
   // tslint:disable-next-line:typedef
-  createNewUser() {
-
-    this.submitted = true;
-    console.log(MustMatch);
-    console.log(this.newFromUser);
-    // stop here if form is invalid
-    // @ts-ignore
-    if (this.newFromUser.invalid) {
-      return;
-    }
-
-    // @ts-ignore
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.newFromUser.value));
-    let newUserName: User;
-    console.log(this.newFromUser);
-    console.log(this.newFromUser.value);
-    newUserName = this.newFromUser.value;
-    console.log(this.newFromUser);
-    console.log(newUserName.username);
-    this.userService.createCustomer(newUserName).subscribe(() => {
-        alert('Thêm thành công');
-      }
-    );
-  }
-
-  // tslint:disable-next-line:typedef
   get f() { // @ts-ignore
     return this.newFromUser.controls;
   }
+  // tslint:disable-next-line:typedef
+  createNewUser() {
+
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.newFromUser.invalid) {
+      let newUserName: User;
+      console.log(this.newFromUser);
+      console.log(this.newFromUser.value);
+      newUserName = this.newFromUser.value;
+      console.log(this.newFromUser);
+      console.log(newUserName.username);
+      this.userService.createCustomer(newUserName).subscribe(() => {
+          alert('Thêm thành công');
+        }
+      );
+
+    }else {
+      alert(this.newFromUser.invalid);
+    }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.newFromUser.value));
+  }
+
+  // tslint:disable-next-line:typedef
+
 
   // tslint:disable-next-line:typedef
 

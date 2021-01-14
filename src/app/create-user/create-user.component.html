@@ -137,7 +137,7 @@
                   <!--                  <label for="user" class="label">Password</label>-->
                   <input type="password" name="password" formControlName="password" placeholder="Password..."
                          id="password1" required=""
-                         class="input">
+                         class="input" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                   <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
                     <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
@@ -147,10 +147,11 @@
                   <!--                  <label for="user" class="label">Confirm Password</label>-->
                   <input type="password" name="confirm-password" formControlName="confirmPassword" placeholder="Confirm password..."
                          id="password2"
-                         required="" class="input">
+                         required="" class="input" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+                  >
                   <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                     <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                    <div *ngIf="f.confirmPassword.errors.MustMatch">Passwords must match</div>
                   </div>
                 </div>
                 <div class="group">
