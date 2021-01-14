@@ -7,7 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {CreateUserComponent} from './create-user/create-user.component';
-import { LoginComponent } from './create-user/login/login.component';
+
 
 
 
@@ -15,7 +15,6 @@ import { LoginComponent } from './create-user/login/login.component';
   declarations: [
     AppComponent,
     CreateUserComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,

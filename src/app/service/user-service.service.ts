@@ -3,6 +3,7 @@ import {User} from '../model/user';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
+import {FormGroup} from '@angular/forms';
 
 
 @Injectable({
