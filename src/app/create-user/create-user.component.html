@@ -88,70 +88,36 @@
             <div class="sign-up-htm">
               <form [formGroup]="newFromUser" (ngSubmit)="createNewUser()">
                 <div class="group">
-                  <!--                  <label for="user" class="label">Username</label>-->
-                  <!--                  <input type="text" id="firstname" name="firstname" placeholder="Enter username..."-->
-                  <!--                         title="Please enter your First Name" required="" class="input">-->
                   <input type="text" id="username" formControlName="username" placeholder="User Name"
                          title="Please enter your First Name" required="" class="input">
                   <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">First Name is required</div>
+                    <div *ngIf="f.username.errors.required">UserName is required</div>
                   </div>
                 </div>
                 <div class="group">
-                  <!--                  <label for="user" class="label">Email</label>-->
-                  <!--                  <input type="email" id="email" name="email" placeholder="Enter email..."-->
-                  <!--                         title="Please enter a valid email" required="" class="input">-->
-                  <input type="email" id="email" formControlName="email" placeholder="mail@example.com"
-                         title="Please enter a valid email" required="" class="input">
-                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
-                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                  </div>
-                </div>
-                <div class="group">
-                  <!--                  <label for="user" class="label">Phone Number</label>-->
-                  <!--                  <input type="number" id="phone" name="phone" placeholder="Enter phone number..."-->
-                  <!--                         title="Please enter a valid phone" required="" class="input">-->
                   <input type="text" class="lock" formControlName="phone" placeholder="Phone" id="phone" required=""
                          class="input">
                   <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                    <div *ngIf="f.phone.errors.required">First Name is required</div>
+                    <div *ngIf="f.phone.errors.required">Phone Number is required</div>
                   </div>
                 </div>
                 <div class="group">
-                  <!--                  <label for="user" class="label">Address</label>-->
-                  <input type="text" class="lock" formControlName="address" placeholder="Address" id="address"
-                         required="" class="input">
-                  <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-                    <div *ngIf="f.address.errors.required">First Name is required</div>
-                  </div>
-                </div>
-                <div class="group">
-                  <!--                  <label for="user" class="label">FullName</label>-->
-                  <input type="text" class="lock" formControlName="fullName" placeholder="fullName" id="fullName"
-                         required="" class="input">
-                  <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
-                    <div *ngIf="f.fullName.errors.required">First Name is required</div></div>
-                </div>
-                <div class="group">
-                  <!--                  <label for="user" class="label">Password</label>-->
                   <input type="password" name="password" formControlName="password" placeholder="Password..."
                          id="password1" required=""
-                         class="input" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                         class="input">
                   <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
-                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    <div *ngIf="f.password.errors">Password must be at least 6 characters</div>
                   </div>
                 </div>
                 <div class="group">
-                  <!--                  <label for="user" class="label">Confirm Password</label>-->
-                  <input type="password" name="confirm-password" formControlName="confirmPassword" placeholder="Confirm password..."
+                  <input type="password" name="confirm-password" formControlName="confirmPassword"
+                         placeholder="Confirm password..."
                          id="password2"
-                         required="" class="input" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
-                  >
+                         required="" class="input">
                   <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                     <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                    <div *ngIf="f.confirmPassword.errors.MustMatch">Passwords must match</div>
+                    <div *ngIf="f.confirmPassword.errors">Passwords must match</div>
                   </div>
                 </div>
                 <div class="group">

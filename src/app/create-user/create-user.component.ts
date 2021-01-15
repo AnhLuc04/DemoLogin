@@ -31,78 +31,30 @@ export class CreateUserComponent implements OnInit {
     }, {
       validator: MustMatch('password', 'confirmPassword')
     });
-    // this.newUser = this.formBuilder.group({
-    //   address: [''],
-    //   avatar: [''],
-    //   email: [''],
-    //   fullName: [''],
-    //   password: [''],
-    //   phone: [''],
-    //   username: ['']
-    // });
     this.newFromLogin = this.formBuilder.group({
       username: [''],
       password: ['']
     });
   }
 
-
-  // // tslint:disable-next-line:typedef
-  // createNewUser() {
-  //   // tslint:disable-next-line:triple-equals
-  //   if (this.newFromUser.value.password != this.newFromUser.value.confirmPassword) {
-  //     return alert('Vui lòng nhập lài password');
-  //     // tslint:disable-next-line:triple-equals
-  //   } else if (this.newFromUser.value.password == this.newFromUser.value.confirmPassword) {
-  //     this.newUser.value.address = this.newFromUser.value.address;
-  //     this.newUser.value.avatar = this.newFromUser.value.avatar;
-  //     this.newUser.value.email = this.newFromUser.value.email;
-  //     this.newUser.value.fullName = this.newFromUser.value.fullName;
-  //     this.newUser.value.password = this.newFromUser.value.password;
-  //     this.newUser.value.phone = this.newFromUser.value.phone;
-  //     this.newUser.value.username = this.newFromUser.value.username;
-  //     let newUserName: User;
-  //     newUserName = this.newUser.value;
-  //     this.userService.createCustomer(newUserName).subscribe(() => {
-  //       alert('Thêm thành công');
-  //     }, error => {
-  //       alert(console.log(this.userService.createCustomer(newUserName).subscribe()));
-  //     });
-  //   }
-  // }
   // tslint:disable-next-line:typedef
   get f() { // @ts-ignore
     return this.newFromUser.controls;
   }
-  // tslint:disable-next-line:typedef
-  createNewUser() {
 
+// tslint:disable-next-line:typedef
+createNewUser() {
     this.submitted = true;
-
-    // stop here if form is invalid
     if (this.newFromUser.invalid) {
       let newUserName: User;
-      console.log(this.newFromUser);
-      console.log(this.newFromUser.value);
       newUserName = this.newFromUser.value;
-      console.log(this.newFromUser);
-      console.log(newUserName.username);
       this.userService.createCustomer(newUserName).subscribe(() => {
-          alert('Thêm thành công');
         }
       );
-
-    }else {
-      alert(this.newFromUser.invalid);
     }
-
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.newFromUser.value));
   }
 
-  // tslint:disable-next-line:typedef
 
-
-  // tslint:disable-next-line:typedef
 
   // tslint:disable-next-line:typedef
   login() {
